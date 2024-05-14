@@ -8,6 +8,27 @@
     </category>
 
     <category>
+        <pattern>GREETINGS</pattern>
+        <template>
+            <srai>HELLO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <srai>HELLO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOWDY</pattern>
+        <template>
+            <srai>HELLO</srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>MY NAME IS *</pattern>
         <template>
             Nice to meet you, <set name="username"><star/></set>! I will ask you a series of questions about your interests. Please respond to each by choosing the letter that corresponds to your answer. Let's start:
@@ -19,12 +40,12 @@
                 <li>D. Configuring and managing firewalls and network protocols to ensure secure data communication</li>
                 <li>E. Conducting vulnerability assessments and implementing strategies to defend against network attacks</li>
             </ul>
-            Please respond by saying "I choose" followed by the letter of your choice.
+            Please respond by saying "My choice for task interest is" followed by the letter of your choice.
         </template>
     </category>
 
     <category>
-        <pattern>I CHOOSE *</pattern>
+        <pattern>MY CHOICE FOR TASK INTEREST IS *</pattern>
         <template>
             <think><set name="answer_taskInterest"><star/></set></think>
             Thank you. Next question:
@@ -36,13 +57,12 @@
                 <li>D. Monitoring network performance to detect issues and optimize traffic handling</li>
                 <li>E. Developing security protocols to protect systems from malware and phishing attacks</li>
             </ul>
-            Please respond by saying "I choose" followed by the letter of your choice.
+            Please respond by saying "My choice for activity enjoyment is" followed by the letter of your choice.
         </template>
     </category>
 
-    <!-- You can extend the following categories similarly by adding more questions as needed -->
     <category>
-        <pattern>I CHOOSE *</pattern>
+        <pattern>MY CHOICE FOR ACTIVITY ENJOYMENT IS *</pattern>
         <template>
             <think><set name="answer_activityEnjoyment"><star/></set></think>
             Thank you. Here's another question:
@@ -54,12 +74,12 @@
                 <li>D. Ensuring the security of project data and network access</li>
                 <li>E. Troubleshooting and resolving technical issues as they arise</li>
             </ul>
-            Please respond by saying "I choose" followed by the letter of your choice.
+            Please respond by saying "My choice for team role is" followed by the letter of your choice.
         </template>
     </category>
 
     <category>
-        <pattern>I CHOOSE *</pattern>
+        <pattern>MY CHOICE FOR TEAM ROLE IS *</pattern>
         <template>
             <think><set name="answer_teamRole"><star/></set></think>
             Great! Let's move on to the next question:
@@ -71,12 +91,12 @@
                 <li>D. In a fast-paced environment, working on critical security solutions</li>
                 <li>E. In a support role, helping others solve complex technical problems</li>
             </ul>
-            Please respond by saying "I choose" followed by the letter of your choice.
+            Please respond by saying "My choice for project preference is" followed by the letter of your choice.
         </template>
     </category>
 
     <category>
-        <pattern>I CHOOSE *</pattern>
+        <pattern>MY CHOICE FOR PROJECT PREFERENCE IS *</pattern>
         <template>
             <think><set name="answer_projectPreference"><star/></set></think>
             Excellent! One final question:
@@ -85,21 +105,21 @@
                 <li>A. Attending tech conferences and workshops</li>
                 <li>B. Participating in online courses and certifications</li>
                 <li>C. Reading tech blogs and following influential technologists on social media</li>
-                <li>D. Engaging in hands-on projects to test new technologies</li>
+                <li>D. Engaging in hands-on projects to apply new technologies</li>
                 <li>E. Joining professional networks and discussion groups</li>
             </ul>
-            Please respond by saying "I choose" followed by the letter of your choice.
+            Please respond by saying "My choice for staying updated is" followed by the letter of your choice.
         </template>
     </category>
 
     <category>
-        <pattern>I CHOOSE *</pattern>
+        <pattern>MY CHOICE FOR STAYING UPDATED IS *</pattern>
         <template>
-            <think><set name="answer_updatePreference"><star/></set></think>
+            <think><set name="answer_stayingUpdated"><star/></set></think>
             Thank you for sharing your preferences. I've recorded all your responses. You can ask me about potential career paths based on your interests, or if you have any other questions, feel free to ask!
         </template>
     </category>
-    
+
     <!-- Example category for concluding or additional interaction -->
     <category>
         <pattern>TELL ME ABOUT CAREER PATHS</pattern>
@@ -128,6 +148,4 @@
             I'm sorry, I didn't understand that. Could you please repeat your question or say 'help' for more options?
         </template>
     </category>
-
 </aiml>
-
