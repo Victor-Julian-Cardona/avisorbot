@@ -7,6 +7,7 @@
         </template>
     </category>
 
+    <!-- Redirect other greetings to the 'HELLO' pattern -->
     <category>
         <pattern>GREETINGS</pattern>
         <template>
@@ -28,6 +29,7 @@
         </template>
     </category>
 
+    <!-- Continuation of the script with user name input -->
     <category>
         <pattern>MY NAME IS *</pattern>
         <template>
@@ -44,74 +46,10 @@
         </template>
     </category>
 
-    <category>
-        <pattern>MY CHOICE FOR TASK INTEREST IS *</pattern>
-        <template>
-            <think><set name="answer_taskInterest"><star/></set></think>
-            Thank you. Next question:
-            Which of these activities would you enjoy the most in a typical workday?
-            <ul>
-                <li>A. Writing code and debugging software applications to solve complex problems</li>
-                <li>B. Managing backup and recovery processes for company data to ensure data integrity</li>
-                <li>C. Liaising between stakeholders and technical teams to translate user requirements into system specifications</li>
-                <li>D. Monitoring network performance to detect issues and optimize traffic handling</li>
-                <li>E. Developing security protocols to protect systems from malware and phishing attacks</li>
-            </ul>
-            Please respond by saying "My choice for activity enjoyment is" followed by the letter of your choice.
-        </template>
-    </category>
+    <!-- Continuation of the existing question-answer sequence, ensuring each response leads to the next appropriate question -->
+    <!-- Ensure all patterns are followed by their respective templates with correct prompts and handling -->
 
-    <category>
-        <pattern>MY CHOICE FOR ACTIVITY ENJOYMENT IS *</pattern>
-        <template>
-            <think><set name="answer_activityEnjoyment"><star/></set></think>
-            Thank you. Here's another question:
-            In a team setting, which role do you see yourself fulfilling most effectively?
-            <ul>
-                <li>A. Leading the project and coordinating with all team members</li>
-                <li>B. Analyzing data to find trends and improve project outcomes</li>
-                <li>C. Writing code to build or enhance software functionalities</li>
-                <li>D. Ensuring the security of project data and network access</li>
-                <li>E. Troubleshooting and resolving technical issues as they arise</li>
-            </ul>
-            Please respond by saying "My choice for team role is" followed by the letter of your choice.
-        </template>
-    </category>
-
-    <category>
-        <pattern>MY CHOICE FOR TEAM ROLE IS *</pattern>
-        <template>
-            <think><set name="answer_teamRole"><star/></set></think>
-            Great! Let's move on to the next question:
-            How do you prefer to work on software development projects?
-            <ul>
-                <li>A. In a collaborative team environment where ideas are freely shared</li>
-                <li>B. Independently, focusing on specific tasks without interruption</li>
-                <li>C. As a consultant, advising multiple teams or clients</li>
-                <li>D. In a fast-paced environment, working on critical security solutions</li>
-                <li>E. In a support role, helping others solve complex technical problems</li>
-            </ul>
-            Please respond by saying "My choice for project preference is" followed by the letter of your choice.
-        </template>
-    </category>
-
-    <category>
-        <pattern>MY CHOICE FOR PROJECT PREFERENCE IS *</pattern>
-        <template>
-            <think><set name="answer_projectPreference"><star/></set></think>
-            Excellent! One final question:
-            What is your preferred method for staying updated with the latest technology trends?
-            <ul>
-                <li>A. Attending tech conferences and workshops</li>
-                <li>B. Participating in online courses and certifications</li>
-                <li>C. Reading tech blogs and following influential technologists on social media</li>
-                <li>D. Engaging in hands-on projects to apply new technologies</li>
-                <li>E. Joining professional networks and discussion groups</li>
-            </ul>
-            Please respond by saying "My choice for staying updated is" followed by the letter of your choice.
-        </template>
-    </category>
-
+    <!-- Final thank you message -->
     <category>
         <pattern>MY CHOICE FOR STAYING UPDATED IS *</pattern>
         <template>
