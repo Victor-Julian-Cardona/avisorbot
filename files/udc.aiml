@@ -1,39 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-  <category>
+    <category>
         <pattern>HELLO</pattern>
         <template>
-            Hello! I'm your career advisor bot. Are you looking for career advice in computing fields today?
+            Hello! I'm your career advisor bot. Please tell me your name by saying "My name is" followed by your name.
         </template>
     </category>
+
     <category>
-        <pattern>GREETINGS</pattern>
+        <pattern>MY NAME IS *</pattern>
         <template>
-            <srai>HELLO</srai>
+            Nice to meet you, <set name="username"><star/></set>! I will ask you a series of questions about your interests. Please respond to each by choosing the letter that corresponds to your answer. Let's start:
+            Which of these tasks interests you the most? 
+            <ul>
+                <li>A. Designing and implementing new features for a mobile application</li>
+                <li>B. Optimizing SQL queries to improve database performance</li>
+                <li>C. Evaluating business processes and recommending technology solutions to enhance efficiency</li>
+                <li>D. Configuring and managing firewalls and network protocols to ensure secure data communication</li>
+                <li>E. Conducting vulnerability assessments and implementing strategies to defend against network attacks</li>
+            </ul>
+            Please respond by saying "I choose" followed by the letter of your choice.
         </template>
     </category>
+
     <category>
-        <pattern>HOWDY</pattern>
+        <pattern>I CHOOSE *</pattern>
         <template>
-            <srai>HELLO</srai>
+            <think><set name="answer_taskInterest"><star/></set></think>
+            Thank you. Next question:
+            Which of these activities would you enjoy the most in a typical workday?
+            <ul>
+                <li>A. Writing code and debugging software applications to solve complex problems</li>
+                <li>B. Managing backup and recovery processes for company data to ensure data integrity</li>
+                <li>C. Liaising between stakeholders and technical teams to translate user requirements into system specifications</li>
+                <li>D. Monitoring network performance to detect issues and optimize traffic handling</li>
+                <li>E. Developing security protocols to protect systems from malware and phishing attacks</li>
+            </ul>
+            Please respond by saying "I choose" followed by the letter of your choice.
         </template>
     </category>
+
+    <!-- You can extend the following categories similarly by adding more questions as needed -->
     <category>
-        <pattern>HI</pattern>
+        <pattern>I CHOOSE *</pattern>
         <template>
-            <srai>HELLO</srai>
+            <think><set name="answer_activityEnjoyment"><star/></set></think>
+            Thank you. Here's another question:
+            In a team setting, which role do you see yourself fulfilling most effectively?
+            <ul>
+                <li>A. Leading the project and coordinating with all team members</li>
+                <li>B. Analyzing data to find trends and improve project outcomes</li>
+                <li>C. Writing code to build or enhance software functionalities</li>
+                <li>D. Ensuring the security of project data and network access</li>
+                <li>E. Troubleshooting and resolving technical issues as they arise</li>
+            </ul>
+            Please respond by saying "I choose" followed by the letter of your choice.
         </template>
     </category>
+
     <category>
-        <pattern>WHAT IS YOUR NAME</pattern>
+        <pattern>I CHOOSE *</pattern>
         <template>
-            My name is <bot name="name"/>
+            <think><set name="answer_teamRole"><star/></set></think>
+            Great! Let's move on to the next question:
+            How do you prefer to work on software development projects?
+            <ul>
+                <li>A. In a collaborative team environment where ideas are freely shared</li>
+                <li>B. Independently, focusing on specific tasks without interruption</li>
+                <li>C. As a consultant, advising multiple teams or clients</li>
+                <li>D. In a fast-paced environment, working on critical security solutions</li>
+                <li>E. In a support role, helping others solve complex technical problems</li>
+            </ul>
+            Please respond by saying "I choose" followed by the letter of your choice.
         </template>
     </category>
+
     <category>
-        <pattern>WHO IS YOUR FRIEND</pattern>
+        <pattern>I CHOOSE *</pattern>
         <template>
-            My friend is <bot name="friend"/>
-        </template>
-    </category>
-</aiml>
+            <think><set name="answer_projectPreference"><star/></set></think>
+            Excellent! One final question:
+            What is your preferred method for staying updated with the latest technology trends?
+            <ul>
+                <li>A. Attending tech conferences and workshops</li>
+                <li>B. Participating in online courses and certifications</li>
+                <li>C. Reading tech blogs and following influential technologists on social media</li>
+                <li>D. Engaging in hands-on projects to test new technologies</li>
+                <li>E. Join
