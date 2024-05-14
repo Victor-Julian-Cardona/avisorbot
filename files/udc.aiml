@@ -33,23 +33,72 @@
     <category>
         <pattern>MY NAME IS *</pattern>
         <template>
-            Nice to meet you, <set name="username"><star/></set>! I will ask you a series of questions about your interests. Please respond to each by choosing the letter that corresponds to your answer. Let's start:
-            Which of these tasks interests you the most? 
-            <ul>
-                <li>A. Designing and implementing new features for a mobile application</li>
-                <li>B. Optimizing SQL queries to improve database performance</li>
-                <li>C. Evaluating business processes and recommending technology solutions to enhance efficiency</li>
-                <li>D. Configuring and managing firewalls and network protocols to ensure secure data communication</li>
-                <li>E. Conducting vulnerability assessments and implementing strategies to defend against network attacks</li>
-            </ul>
-            Please respond by saying "My choice for task interest is" followed by the letter of your choice.
+            Nice to meet you, <set name="username"><star/></set>! I will ask you a series of questions about your interests. Please respond by choosing an option below. Let's start:
+            Which of these tasks interests you the most?
+            <button>A. Designing and implementing new features for a mobile application</button>
+            <button>B. Optimizing SQL queries to improve database performance</button>
+            <button>C. Evaluating business processes and recommending technology solutions to enhance efficiency</button>
+            <button>D. Configuring and managing firewalls and network protocols to ensure secure data communication</button>
+            <button>E. Conducting vulnerability assessments and implementing strategies to defend against network attacks</button>
         </template>
     </category>
 
-    <!-- Continuation of the existing question-answer sequence, ensuring each response leads to the next appropriate question -->
-    <!-- Ensure all patterns are followed by their respective templates with correct prompts and handling -->
+    <category>
+        <pattern>MY CHOICE FOR TASK INTEREST IS *</pattern>
+        <template>
+            <think><set name="answer_taskInterest"><star/></set></think>
+            Thank you. Next question:
+            Which of these activities would you enjoy the most in a typical workday?
+            <button>A. Writing code and debugging software applications to solve complex problems</button>
+            <button>B. Managing backup and recovery processes for company data to ensure data integrity</button>
+            <button>C. Liaising between stakeholders and technical teams to translate user requirements into system specifications</button>
+            <button>D. Monitoring network performance to detect issues and optimize traffic handling</button>
+            <button>E. Developing security protocols to protect systems from malware and phishing attacks</button>
+        </template>
+    </category>
 
-    <!-- Final thank you message -->
+    <category>
+        <pattern>MY CHOICE FOR ACTIVITY ENJOYMENT IS *</pattern>
+        <template>
+            <think><set name="answer_activityEnjoyment"><star/></set></think>
+            Thank you. Here's another question:
+            In a team setting, which role do you see yourself fulfilling most effectively?
+            <button>A. Leading the project and coordinating with all team members</button>
+            <button>B. Analyzing data to find trends and improve project outcomes</button>
+            <button>C. Writing code to build or enhance software functionalities</button>
+            <button>D. Ensuring the security of project data and network access</button>
+            <button>E. Troubleshooting and resolving technical issues as they arise</button>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY CHOICE FOR TEAM ROLE IS *</pattern>
+        <template>
+            <think><set name="answer_teamRole"><star/></set></think>
+            Great! Let's move on to the next question:
+            How do you prefer to work on software development projects?
+            <button>A. In a collaborative team environment where ideas are freely shared</button>
+            <button>B. Independently, focusing on specific tasks without interruption</button>
+            <button>C. As a consultant, advising multiple teams or clients</button>
+            <button>D. In a fast-paced environment, working on critical security solutions</button>
+            <button>E. In a support role, helping others solve complex technical problems</button>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY CHOICE FOR PROJECT PREFERENCE IS *</pattern>
+        <template>
+            <think><set name="answer_projectPreference"><star/></set></think>
+            Excellent! One final question:
+            What is your preferred method for staying updated with the latest technology trends?
+            <button>A. Attending tech conferences and workshops</button>
+            <button>B. Participating in online courses and certifications</button>
+            <button>C. Reading tech blogs and following influential technologists on social media</button>
+            <button>D. Engaging in hands-on projects to apply new technologies</button>
+            <button>E. Joining professional networks and discussion groups</button>
+        </template>
+    </category>
+
     <category>
         <pattern>MY CHOICE FOR STAYING UPDATED IS *</pattern>
         <template>
