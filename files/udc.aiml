@@ -24,4 +24,16 @@
             <srai>HELLO</srai>
         </template>
     </category>
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>
+            My name is <bot name="name"/>
+        </template>
+    </category>
+    <category>
+        <pattern>WHO IS YOUR FRIEND</pattern>
+        <template>
+            My friend is <bot name="friend"/>
+        </template>
+    </category>
 </aiml>
