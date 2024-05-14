@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
-    <category>
-        <pattern>HELLO</pattern>
-        <template>
-            Hello! I'm your career advisor bot. Please tell me your name by saying "My name is" followed by your name.
-        </template>
-    </category>
 
-    <!-- Redirect other greetings to the 'HELLO' pattern -->
+<category>
+    <pattern>HELLO</pattern>
+    <template>
+        Hello! I'm your career advisor bot. Are you looking for career advice today?
+        <button>
+            <text>Yes</text>
+            <postback>START QUESTIONS</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>END</postback>
+        </button>
+    </template>
+</category>
+    
+        <!-- Redirect other greetings to the 'HELLO' pattern -->
     <category>
         <pattern>GREETINGS</pattern>
         <template>
@@ -29,110 +38,527 @@
         </template>
     </category>
 
-    <!-- Continuation of the script with user name input -->
+
+    <!-- User starts the process -->
     <category>
-        <pattern>MY NAME IS *</pattern>
+        <pattern>START QUESTIONS</pattern>
         <template>
-            Nice to meet you, <set name="username"><star/></set>! I will ask you a series of questions about your interests. Please respond by choosing an option below. Let's start:
             Which of these tasks interests you the most?
-            <button>A. Designing and implementing new features for a mobile application</button>
-            <button>B. Optimizing SQL queries to improve database performance</button>
-            <button>C. Evaluating business processes and recommending technology solutions to enhance efficiency</button>
-            <button>D. Configuring and managing firewalls and network protocols to ensure secure data communication</button>
-            <button>E. Conducting vulnerability assessments and implementing strategies to defend against network attacks</button>
+            <button>
+                <text>Designing and implementing new features for a mobile application</text>
+                <postback>SOFTWARE DEVELOPER 1</postback>
+            </button>
+            <button>
+                <text>Optimizing SQL queries to improve database performance</text>
+                <postback>DATABASE ADMINISTRATOR 1</postback>
+            </button>
+            <button>
+                <text>Evaluating business processes and recommending technology solutions to enhance efficiency</text>
+                <postback>BUSINESS ANALYST 1</postback>
+            </button>
+            <button>
+                <text>Configuring and managing firewalls and network protocols to ensure secure data communication</text>
+                <postback>NETWORK ENGINEER 1</postback>
+            </button>
+            <button>
+                <text>Conducting vulnerability assessments and implementing strategies to defend against network attacks</text>
+                <postback>CYBERSECURITY SPECIALIST 1</postback>
+            </button>
         </template>
     </category>
 
+    <!-- Handling job interest responses and asking for confirmation -->
     <category>
-        <pattern>MY CHOICE FOR TASK INTEREST IS *</pattern>
+        <pattern>SOFTWARE DEVELOPER 1</pattern>
         <template>
-            <think><set name="answer_taskInterest"><star/></set></think>
-            Thank you. Next question:
+            It seems you are interested in the tasks of a Software Developer. That job usually entails designing, coding, and testing software applications. Does that job seem like a right fit for you?
+            <button>
+                <text>Yes</text>
+                <postback>CONFIRM SOFTWARE DEVELOPER</postback>
+            </button>
+            <button>
+                <text>No</text>
+                <postback>ASK NEXT QUESTION</postback>
+            </button>
+        </template>
+    </category>
+
+    <!-- Template for confirming job selection -->
+    <category>
+        <pattern>CONFIRM SOFTWARE DEVELOPER</pattern>
+        <template>
+            Wonderful, then I recommend you pursue a career as a Software Developer. Good luck with your career journey!
+        </template>
+    </category>
+
+    <!-- Handling job interest responses and asking for confirmation for Database Administrator -->
+<category>
+    <pattern>DATABASE ADMINISTRATOR 1</pattern>
+    <template>
+        It seems you are interested in the tasks of a Database Administrator. This role typically involves managing and optimizing databases to ensure efficient data storage and retrieval. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM DATABASE ADMINISTRATOR</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK NEXT QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+<!-- Template for confirming job selection for Database Administrator -->
+<category>
+    <pattern>CONFIRM DATABASE ADMINISTRATOR</pattern>
+    <template>
+        Wonderful, then I recommend you pursue a career as a Database Administrator. Good luck with your career journey!
+    </template>
+</category>
+
+<!-- Handling job interest responses and asking for confirmation for Business Analyst -->
+<category>
+    <pattern>BUSINESS ANALYST 1</pattern>
+    <template>
+        It seems you are interested in the role of a Business Analyst. This job typically involves analyzing business processes and recommending solutions to improve efficiency. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM BUSINESS ANALYST</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK NEXT QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+<!-- Template for confirming job selection for Business Analyst -->
+<category>
+    <pattern>CONFIRM BUSINESS ANALYST</pattern>
+    <template>
+        Wonderful, then I recommend you pursue a career as a Business Analyst. Good luck with your career journey!
+    </template>
+</category>
+
+<!-- Handling job interest responses and asking for confirmation for Network Engineer -->
+<category>
+    <pattern>NETWORK ENGINEER 1</pattern>
+    <template>
+        It seems you are interested in the tasks of a Network Engineer. This role usually entails configuring, managing, and troubleshooting network infrastructure. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM NETWORK ENGINEER</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK NEXT QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+<!-- Template for confirming job selection for Network Engineer -->
+<category>
+    <pattern>CONFIRM NETWORK ENGINEER</pattern>
+    <template>
+        Wonderful, then I recommend you pursue a career as a Network Engineer. Good luck with your career journey!
+    </template>
+</category>
+
+<!-- Handling job interest responses and asking for confirmation for Cybersecurity Specialist -->
+<category>
+    <pattern>CYBERSECURITY SPECIALIST 1</pattern>
+    <template>
+        It seems you are interested in the tasks of a Cybersecurity Specialist. This role typically involves securing network systems, assessing vulnerabilities, and implementing security measures. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM CYBERSECURITY SPECIALIST</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK NEXT QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+<!-- Template for confirming job selection for Cybersecurity Specialist -->
+<category>
+    <pattern>CONFIRM CYBERSECURITY SPECIALIST</pattern>
+    <template>
+        Wonderful, then I recommend you pursue a career as a Cybersecurity Specialist. Good luck with your career journey!
+    </template>
+</category>
+
+    <!-- Pattern for handling 'no' to job suggestion -->
+    <category>
+        <pattern>ASK NEXT QUESTION</pattern>
+        <template>
             Which of these activities would you enjoy the most in a typical workday?
-            <button>A. Writing code and debugging software applications to solve complex problems</button>
-            <button>B. Managing backup and recovery processes for company data to ensure data integrity</button>
-            <button>C. Liaising between stakeholders and technical teams to translate user requirements into system specifications</button>
-            <button>D. Monitoring network performance to detect issues and optimize traffic handling</button>
-            <button>E. Developing security protocols to protect systems from malware and phishing attacks</button>
+            <button>
+                <text>Writing code and debugging software applications to solve complex problems</text>
+                <postback>SOFTWARE DEVELOPER 2</postback>
+            </button>
+            <button>
+                <text>Managing backup and recovery processes for company data to ensure data integrity</text>
+                <postback>DATABASE ADMINISTRATOR 2</postback>
+            </button>
+            <button>
+                <text>Liaising between stakeholders and technical teams to translate user requirements into system specifications</text>
+                <postback>BUSINESS ANALYST 2</postback>
+            </button>
+            <button>
+                <text>Monitoring network performance to detect issues and optimize traffic handling</text>
+                <postback>NETWORK ENGINEER 2</postback>
+            </button>
+            <button>
+                <text>Developing security protocols to protect systems from malware and phishing attacks</text>
+                <postback>CYBERSECURITY SPECIALIST 2</postback>
+            </button>
         </template>
     </category>
+    
+    <!-- Handling job interest responses and asking for confirmation for Software Developer -->
+<category>
+    <pattern>SOFTWARE DEVELOPER 2</pattern>
+    <template>
+        It seems you are interested in the activities of a Software Developer. That job usually entails designing, coding, and testing software applications. Does that job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM SOFTWARE DEVELOPER</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK THIRD QUESTION</postback>
+        </button>
+    </template>
+</category>
 
+
+<!-- Handling job interest responses and asking for confirmation for Database Administrator -->
+<category>
+    <pattern>DATABASE ADMINISTRATOR 2</pattern>
+    <template>
+        It seems you are interested in the activities of a Database Administrator. This role typically involves managing and optimizing databases to ensure efficient data storage and retrieval. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM DATABASE ADMINISTRATOR</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK THIRD QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+
+
+<!-- Handling job interest responses and asking for confirmation for Business Analyst -->
+<category>
+    <pattern>BUSINESS ANALYST 2</pattern>
+    <template>
+        It seems you are interested in the activities of a Business Analyst. This job typically involves analyzing business processes and recommending solutions to improve efficiency. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM BUSINESS ANALYST</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK THIRD QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+<!-- Handling job interest responses and asking for confirmation for Network Engineer -->
+<category>
+    <pattern>NETWORK ENGINEER 2</pattern>
+    <template>
+        It seems you are interested in the activities of a Network Engineer. This role usually entails configuring, managing, and troubleshooting network infrastructure. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM NETWORK ENGINEER</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK THIRD QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+
+<!-- Handling job interest responses and asking for confirmation for Cybersecurity Specialist -->
+<category>
+    <pattern>CYBERSECURITY SPECIALIST 2</pattern>
+    <template>
+        It seems you are interested in the activities of a Cybersecurity Specialist. This role typically involves securing network systems, assessing vulnerabilities, and implementing security measures. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM CYBERSECURITY SPECIALIST</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK THIRD QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+
+
+<!-- Third Question -->
     <category>
-        <pattern>MY CHOICE FOR ACTIVITY ENJOYMENT IS *</pattern>
+        <pattern>ASK THIRD QUESTION</pattern>
         <template>
-            <think><set name="answer_activityEnjoyment"><star/></set></think>
-            Thank you. Here's another question:
             In a team setting, which role do you see yourself fulfilling most effectively?
-            <button>A. Leading the project and coordinating with all team members</button>
-            <button>B. Analyzing data to find trends and improve project outcomes</button>
-            <button>C. Writing code to build or enhance software functionalities</button>
-            <button>D. Ensuring the security of project data and network access</button>
-            <button>E. Troubleshooting and resolving technical issues as they arise</button>
+            <button>
+                <text>Leading the project and coordinating with all team members</text>
+                <postback>SOFTWARE DEVELOPER 3</postback>
+            </button>
+            <button>
+                <text>Analyzing data to find trends and improve project outcomes</text>
+                <postback>DATABASE ADMINISTRATOR 3</postback>
+            </button>
+            <button>
+                <text>Writing code to build or enhance software functionalities</text>
+                <postback>BUSINESS ANALYST 3</postback>
+            </button>
+            <button>
+                <text>Ensuring the security of project data and network access</text>
+                <postback>NETWORK ENGINEER 3</postback>
+            </button>
+            <button>
+                <text>Troubleshooting and resolving technical issues as they arise</text>
+                <postback>CYBERSECURITY SPECIALIST 3</postback>
+            </button>
         </template>
     </category>
+    
+    <!-- Handling job interest responses and asking for confirmation for Software Developer -->
+<category>
+    <pattern>SOFTWARE DEVELOPER 3</pattern>
+    <template>
+        It seems you are interested in the role of a Software Developer. That job usually entails designing, coding, and testing software applications. Does that job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM SOFTWARE DEVELOPER</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK FOURTH QUESTION</postback>
+        </button>
+    </template>
+</category>
 
+
+
+<!-- Handling job interest responses and asking for confirmation for Database Administrator -->
+<category>
+    <pattern>DATABASE ADMINISTRATOR 3</pattern>
+    <template>
+        It seems you are interested in the role of a Database Administrator. This role typically involves managing and optimizing databases to ensure efficient data storage and retrieval. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM DATABASE ADMINISTRATOR</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK FOURTH QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+
+
+<!-- Handling job interest responses and asking for confirmation for Business Analyst -->
+<category>
+    <pattern>BUSINESS ANALYST 3</pattern>
+    <template>
+        It seems you are interested in the role of a Business Analyst. This job typically involves analyzing business processes and recommending solutions to improve efficiency. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM BUSINESS ANALYST</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK FOURTH QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+
+<!-- Handling job interest responses and asking for confirmation for Network Engineer -->
+<category>
+    <pattern>NETWORK ENGINEER 3</pattern>
+    <template>
+        It seems you are interested in the role of a Network Engineer. This role usually entails configuring, managing, and troubleshooting network infrastructure. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM NETWORK ENGINEER</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK FOURTH QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+
+<!-- Handling job interest responses and asking for confirmation for Cybersecurity Specialist -->
+<category>
+    <pattern>CYBERSECURITY SPECIALIST 3</pattern>
+    <template>
+        It seems you are interested in the role of a Cybersecurity Specialist. This role typically involves securing network systems, assessing vulnerabilities, and implementing security measures. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM CYBERSECURITY SPECIALIST</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>ASK FOURTH QUESTION</postback>
+        </button>
+    </template>
+</category>
+
+
+    
     <category>
-        <pattern>MY CHOICE FOR TEAM ROLE IS *</pattern>
+        <pattern>ASK FOURTH QUESTION</pattern>
         <template>
-            <think><set name="answer_teamRole"><star/></set></think>
-            Great! Let's move on to the next question:
             How do you prefer to work on software development projects?
-            <button>A. In a collaborative team environment where ideas are freely shared</button>
-            <button>B. Independently, focusing on specific tasks without interruption</button>
-            <button>C. As a consultant, advising multiple teams or clients</button>
-            <button>D. In a fast-paced environment, working on critical security solutions</button>
-            <button>E. In a support role, helping others solve complex technical problems</button>
+            <button>
+                <text>In a collaborative team environment where ideas are freely shared</text>
+                <postback>SOFTWARE DEVELOPER 4</postback>
+            </button>
+            <button>
+                <text>With a small, dedicated team focusing on critical tasks</text>
+                <postback>DATABASE ADMINISTRATOR 4</postback>
+            </button>
+            <button>
+                <text>Independently, focusing on specific parts of the project</text>
+                <postback>BUSINESS ANALYST 4</postback>
+            </button>
+            <button>
+                <text>As a consultant, providing expertise but not involved in day-to-day development</text>
+                <postback>NETWORK ENGINEER 4</postback>
+            </button>
+            <button>
+                <text>Leading a team, making high-level design and strategy decisions</text>
+                <postback>CYBERSECURITY SPECIALIST 4</postback>
+            </button>
         </template>
     </category>
+    
+    <!-- Handling job interest responses and asking for confirmation for Software Developer -->
+<category>
+    <pattern>SOFTWARE DEVELOPER 4</pattern>
+    <template>
+        It seems you are interested in the work of a Software Developer. That job usually entails designing, coding, and testing software applications. Does that job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM SOFTWARE DEVELOPER</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>START OVER</postback>
+        </button>
+    </template>
+</category>
 
+
+<!-- Handling job interest responses and asking for confirmation for Database Administrator -->
+<category>
+    <pattern>DATABASE ADMINISTRATOR 4</pattern>
+    <template>
+        It seems you are interested in the work of a Database Administrator. This role typically involves managing and optimizing databases to ensure efficient data storage and retrieval. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM DATABASE ADMINISTRATOR</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>START OVER</postback>
+        </button>
+    </template>
+</category>
+
+
+<!-- Handling job interest responses and asking for confirmation for Business Analyst -->
+<category>
+    <pattern>BUSINESS ANALYST 4</pattern>
+    <template>
+        It seems you are interested in the work of a Business Analyst. This job typically involves analyzing business processes and recommending solutions to improve efficiency. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM BUSINESS ANALYST</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>START OVER</postback>
+        </button>
+    </template>
+</category>
+
+
+<!-- Handling job interest responses and asking for confirmation for Network Engineer -->
+<category>
+    <pattern>NETWORK ENGINEER 4</pattern>
+    <template>
+        It seems you are interested in the work of a Network Engineer. This role usually entails configuring, managing, and troubleshooting network infrastructure. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM NETWORK ENGINEER</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>START OVER</postback>
+        </button>
+    </template>
+</category>
+
+
+<!-- Handling job interest responses and asking for confirmation for Cybersecurity Specialist -->
+<category>
+    <pattern>CYBERSECURITY SPECIALIST 4</pattern>
+    <template>
+        It seems you are interested in the work of a Cybersecurity Specialist. This role typically involves securing network systems, assessing vulnerabilities, and implementing security measures. Does this job seem like a right fit for you?
+        <button>
+            <text>Yes</text>
+            <postback>CONFIRM CYBERSECURITY SPECIALIST</postback>
+        </button>
+        <button>
+            <text>No</text>
+            <postback>START OVER</postback>
+        </button>
+    </template>
+</category>
+
+
+
+    <!-- Template for restart or end after all options are tried -->
     <category>
-        <pattern>MY CHOICE FOR PROJECT PREFERENCE IS *</pattern>
+        <pattern>START OVER</pattern>
         <template>
-            <think><set name="answer_projectPreference"><star/></set></think>
-            Excellent! One final question:
-            What is your preferred method for staying updated with the latest technology trends?
-            <button>A. Attending tech conferences and workshops</button>
-            <button>B. Participating in online courses and certifications</button>
-            <button>C. Reading tech blogs and following influential technologists on social media</button>
-            <button>D. Engaging in hands-on projects to apply new technologies</button>
-            <button>E. Joining professional networks and discussion groups</button>
+            It seems we've explored several options and you are still not satisfied. Would you like to start the process again or end our session here?
+            <button>
+                <text>Start Over</text>
+                <postback>HELLO</postback>
+            </button>
+            <button>
+                <text>End</text>
+                <postback>END</postback>
+            </button>
         </template>
     </category>
 
+    <!-- Template for ending the session -->
     <category>
-        <pattern>MY CHOICE FOR STAYING UPDATED IS *</pattern>
+        <pattern>END</pattern>
         <template>
-            <think><set name="answer_stayingUpdated"><star/></set></think>
-            Thank you for sharing your preferences. I've recorded all your responses. You can ask me about potential career paths based on your interests, or if you have any other questions, feel free to ask!
+            Thank you for using the career advisor bot. Have a great day!
         </template>
     </category>
-
-    <!-- Example category for concluding or additional interaction -->
-    <category>
-        <pattern>TELL ME ABOUT CAREER PATHS</pattern>
-        <template>
-            Based on your answers, I recommend considering the following career paths:
-            <condition name="answer_taskInterest">
-                <value>A</value>
-                <li>Mobile Application Developer</li>
-                <value>B</value>
-                <li>Database Administrator</li>
-                <value>C</value>
-                <li>IT Consultant</li>
-                <value>D</value>
-                <li>Network Engineer</li>
-                <value>E</value>
-                <li>Security Analyst</li>
-            </condition>
-            If you need more detailed advice, consider scheduling a meeting with a career advisor.
-        </template>
-    </category>
-
-    <!-- Example category for handling unknown inputs -->
+    
     <category>
         <pattern>*</pattern>
         <template>
-            I'm sorry, I didn't understand that. Could you please repeat your question or say 'help' for more options?
+            Please greet me to begin our session. Use the buttons I provide for any further interactions.
         </template>
     </category>
+
 </aiml>
