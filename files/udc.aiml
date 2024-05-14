@@ -86,4 +86,48 @@
                 <li>B. Participating in online courses and certifications</li>
                 <li>C. Reading tech blogs and following influential technologists on social media</li>
                 <li>D. Engaging in hands-on projects to test new technologies</li>
-                <li>E. Join
+                <li>E. Joining professional networks and discussion groups</li>
+            </ul>
+            Please respond by saying "I choose" followed by the letter of your choice.
+        </template>
+    </category>
+
+    <category>
+        <pattern>I CHOOSE *</pattern>
+        <template>
+            <think><set name="answer_updatePreference"><star/></set></think>
+            Thank you for sharing your preferences. I've recorded all your responses. You can ask me about potential career paths based on your interests, or if you have any other questions, feel free to ask!
+        </template>
+    </category>
+    
+    <!-- Example category for concluding or additional interaction -->
+    <category>
+        <pattern>TELL ME ABOUT CAREER PATHS</pattern>
+        <template>
+            Based on your answers, I recommend considering the following career paths:
+            <condition name="answer_taskInterest">
+                <value>A</value>
+                <li>Mobile Application Developer</li>
+                <value>B</value>
+                <li>Database Administrator</li>
+                <value>C</value>
+                <li>IT Consultant</li>
+                <value>D</value>
+                <li>Network Engineer</li>
+                <value>E</value>
+                <li>Security Analyst</li>
+            </condition>
+            If you need more detailed advice, consider scheduling a meeting with a career advisor.
+        </template>
+    </category>
+
+    <!-- Example category for handling unknown inputs -->
+    <category>
+        <pattern>*</pattern>
+        <template>
+            I'm sorry, I didn't understand that. Could you please repeat your question or say 'help' for more options?
+        </template>
+    </category>
+
+</aiml>
+
