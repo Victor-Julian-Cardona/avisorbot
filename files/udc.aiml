@@ -302,33 +302,33 @@
 
 
 <!-- Third Question -->
-    <category>
-        <pattern>ASK THIRD QUESTION</pattern>
-        <template>
-            In a team setting, which role do you see yourself fulfilling most effectively?
-            <button>
-                <text>Leading the project and coordinating with all team members</text>
-                <postback>SOFTWARE DEVELOPER 3</postback>
-            </button>
-            <button>
-                <text>Analyzing data to find trends and improve project outcomes</text>
-                <postback>DATABASE ADMINISTRATOR 3</postback>
-            </button>
-            <button>
-                <text>Writing code to build or enhance software functionalities</text>
-                <postback>BUSINESS ANALYST 3</postback>
-            </button>
-            <button>
-                <text>Ensuring the security of project data and network access</text>
-                <postback>NETWORK ENGINEER 3</postback>
-            </button>
-            <button>
-                <text>Troubleshooting and resolving technical issues as they arise</text>
-                <postback>CYBERSECURITY SPECIALIST 3</postback>
-            </button>
-        </template>
-    </category>
-    
+<category>
+    <pattern>ASK THIRD QUESTION</pattern>
+    <template>
+        In a team setting, which role do you see yourself fulfilling most effectively? Select the option that best describes your ideal work style and responsibilities:
+        <button>
+            <text>Designing and prototyping new applications from initial concept to final implementation</text>
+            <postback>SOFTWARE DEVELOPER 3</postback>
+        </button>
+        <button>
+            <text>Managing data systems, ensuring their integrity, performance, and security, along with regular maintenance and backup</text>
+            <postback>DATABASE ADMINISTRATOR 3</postback>
+        </button>
+        <button>
+            <text>Interfacing with stakeholders to gather requirements, analyze needs, and document the processes for technical teams</text>
+            <postback>BUSINESS ANALYST 3</postback>
+        </button>
+        <button>
+            <text>Designing and maintaining network infrastructure to support organizational IT needs and security measures</text>
+            <postback>NETWORK ENGINEER 3</postback>
+        </button>
+        <button>
+            <text>Developing and implementing security strategies to safeguard information against cyber threats and unauthorized access</text>
+            <postback>CYBERSECURITY SPECIALIST 3</postback>
+        </button>
+    </template>
+</category>
+
     <!-- Handling job interest responses and asking for confirmation for Software Developer -->
 <category>
     <pattern>SOFTWARE DEVELOPER 3</pattern>
@@ -417,33 +417,33 @@
 
 
     
-    <category>
-        <pattern>ASK FOURTH QUESTION</pattern>
-        <template>
-            How do you prefer to work on software development projects?
-            <button>
-                <text>In a collaborative team environment where ideas are freely shared</text>
-                <postback>SOFTWARE DEVELOPER 4</postback>
-            </button>
-            <button>
-                <text>With a small, dedicated team focusing on critical tasks</text>
-                <postback>DATABASE ADMINISTRATOR 4</postback>
-            </button>
-            <button>
-                <text>Independently, focusing on specific parts of the project</text>
-                <postback>BUSINESS ANALYST 4</postback>
-            </button>
-            <button>
-                <text>As a consultant, providing expertise but not involved in day-to-day development</text>
-                <postback>NETWORK ENGINEER 4</postback>
-            </button>
-            <button>
-                <text>Leading a team, making high-level design and strategy decisions</text>
-                <postback>CYBERSECURITY SPECIALIST 4</postback>
-            </button>
-        </template>
-    </category>
-    
+<category>
+    <pattern>ASK FOURTH QUESTION</pattern>
+    <template>
+        How do you prefer to work on software development projects?
+        <button>
+            <text>In a collaborative team environment where ideas are freely shared</text>
+            <postback>SOFTWARE DEVELOPER 4</postback>
+        </button>
+        <button>
+            <text>Managing database systems to ensure performance and security, often working independently or in small teams</text>
+            <postback>DATABASE ADMINISTRATOR 4</postback>
+        </button>
+        <button>
+            <text>Interacting with various stakeholders to define project requirements and ensure solutions meet business needs</text>
+            <postback>BUSINESS ANALYST 4</postback>
+        </button>
+        <button>
+            <text>Actively managing and optimizing network infrastructure to support organizational needs and security</text>
+            <postback>NETWORK ENGINEER 4</postback>
+        </button>
+        <button>
+            <text>Developing and implementing security measures, often leading initiatives to safeguard organizational data</text>
+            <postback>CYBERSECURITY SPECIALIST 4</postback>
+        </button>
+    </template>
+</category>
+
     <!-- Handling job interest responses and asking for confirmation for Software Developer -->
 <category>
     <pattern>SOFTWARE DEVELOPER 4</pattern>
